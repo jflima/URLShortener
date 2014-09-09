@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+	
+<title>Encurtador de URL</title>
+
+<h1>Encurtador de URL</h1>
+<h3>{{ message }}</h3>
+<form action="{%url 'shortener:shorten'%}" method="post">
+	{% csrf_token %}
+	<p>
+		<label for='link'>Insira o Link </label>
+		<input type="text" name="link" id="link"/>
+	</p>
+	<input type="submit" name="encurtar" id="encurtar"/>
+</form>
+<form action="{%url 'shortener:logout'%}" method="post">
+	{% csrf_token %}
+	<input type="submit" value="Logout" id="logout" />
+</form>

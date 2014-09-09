@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<title>Login</title>
+<h1>Login</h1>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+<form action="{%url 'shortener:make_login'%}" method="post">
+	{% csrf_token %}
+	<p>
+		<label for="emailinp">Email</label>
+		<input type="text" id="emailinp" name="emailh">
+	</p>
+	<p>
+		<label for="passinp">Password</label>
+		<input type="password" id="passinp" name="passwordh">
+	</p>
+	<input type="submit" value="Login"/>
+	<a href="{%url 'shortener:register'%}">Cadastrar-se</a>
+</form>

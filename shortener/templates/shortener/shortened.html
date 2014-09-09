@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+<title>Encurtador de URL</title>
+
+<h1>Encurtador de URL</h1>
+
+<h2>Resultado</h2>
+<a href="http://127.0.0.1:8000/{{ shortenedlink.identifier }}">http://127.0.0.1:8000/{{ shortenedlink.identifier }}</a>
+<form action="{%url 'shortener:home'%}" method="post">
+	{% csrf_token %}
+	<input type="submit" name="home" value="Encurtar outro link" id="home"/>
+</form>

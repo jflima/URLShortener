@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<title>Registro</title>
+
+<h1>Registro</h1>
+
+{% if message %}
+<h3>{{ message }}</h3>
+{% endif %}
+
+<form action="{%url 'shortener:make_register'%}" method="post">
+	{% csrf_token %}
+	<p>
+		<label for="name">Nome: </label>
+		<input type="text" name="name" id="name">
+	</p>
+	<p>
+		<label for="email">Email: </label>
+		<input type="text" name="email" id="email" />
+	</p>
+	<p>
+		<label for="password">Senha: </label>
+		<input type="password" name="password" id="password" />
+	</p>
+	<p>
+		<label for="password_confirm">Confimacao de Senha: </label>
+		<input type="password" name="password_confirm" id="password_confirm" />
+	</p>
+	<input type="submit" name="register" value="Cadastrar" />
+</form>
+<form action="{%url 'shortener:home'%}" method="post">
+	{% csrf_token %}
+	<input type="submit" name="begin" value="Inicio" />
+</form>
